@@ -2,6 +2,7 @@ import requests
 import base64
 import json
 import pandas
+import os
 import webbrowser
 import urllib
 
@@ -83,8 +84,8 @@ def get_playlist_tracks(user_id, playlist_id):
 
 
 def main():
-    client_id = '834d0893dab04b2b87d0501a8c8e0435'
-    client_secret = '885ac8be089e44af9336c84172b7cee8'
+    client_id = os.getenv('SPOTIFY_CLIENT_ID')
+    client_secret = os.getenv('SPOTIFY_CLIENT_SECRET')
     redirect_uri = 'http://localhost/'
     code = get_code(client_id=client_id, redirect_uri=redirect_uri, scopes='playlist-read-private')
     token = get_token(code=code, client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri)
