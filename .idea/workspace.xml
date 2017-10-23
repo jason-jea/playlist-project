@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dc1b446-dbae-4cdc-9074-7f71b7f6fbff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/python scratch/spotify_api_exploration.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python scratch/spotify_api.py" afterPath="$PROJECT_DIR$/python scratch/spotify_api.py" />
     </list>
@@ -18,11 +18,20 @@
       <file leaf-file-name="spotify_api.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python scratch/spotify_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-111">
-              <caret line="57" column="63" lean-forward="true" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
+            <state relative-caret-position="191">
+              <caret line="79" column="15" lean-forward="true" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spotify_api_exploration.ipynb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python scratch/spotify_api_exploration.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="0" />
             </state>
           </provider>
         </entry>
@@ -33,6 +42,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -42,13 +52,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/python scratch/spotify_api_exploration.ipynb" />
         <option value="$PROJECT_DIR$/python scratch/spotify_api.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="14" />
-    <option name="y" value="23" />
+    <option name="x" value="13" />
+    <option name="y" value="24" />
     <option name="width" value="1280" />
     <option name="height" value="709" />
   </component>
@@ -112,6 +123,22 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.spotify_api">
+    <configuration name="playlist-project" type="Python.Ipnb" factoryName="Jupyter Notebook">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="playlist-project" />
+      <option name="additionalOptions" value="" />
+      <option name="ipnbHost" value="127.0.0.1" />
+      <option name="ipnbPort" value="8888" />
+    </configuration>
     <configuration name="spotify_api" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -129,6 +156,10 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.spotify_api" />
+      <item index="1" class="java.lang.String" itemvalue="Jupyter Notebook.playlist-project" />
+    </list>
     <recent_temporary>
       <list size="1">
         <item index="0" class="java.lang.String" itemvalue="Python.spotify_api" />
@@ -149,14 +180,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="14" y="23" width="1280" height="709" extended-state="0" />
+    <frame x="13" y="24" width="1280" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32810047" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" x="518" y="385" width="730" height="209" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24878837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -164,7 +195,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25324675" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -182,8 +213,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/python scratch/spotify_api.py</url>
-          <line>81</line>
-          <option name="timeStamp" value="18" />
+          <line>121</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python scratch/spotify_api.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -193,7 +229,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="21" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -266,10 +302,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python scratch/spotify_api_exploration.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/python scratch/spotify_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="57" column="63" lean-forward="true" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
+        <state relative-caret-position="191">
+          <caret line="79" column="15" lean-forward="true" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

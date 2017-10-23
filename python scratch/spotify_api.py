@@ -80,14 +80,33 @@ def get_playlist_tracks(user_id, playlist_id):
               }
     data = requests.get(url=url, headers=header, params=params)
     track_data = json.loads(data.text)
-    return track_data
+    df = pandas.DataFrame(track_data['items'])
+    track_info = pandas.DataFrame(df['track'].tolist())
+
+    tracks = track_info[['id', 'name']]
+    artists = track_info[['artists']].apply(lambda x: x[0], 1)['artists'].apply(pandas.Series)
+    #artists = pandas.DataFrame(track_info['artists'].tolist())[['name']]
+    tracks['artist'] = artists['name']
+    return tracks
+
+
+def get_track_info(track_ids):
+    url = 'https://api.spotify.com/v1/audio-features'
+    tracks = ",".join(track_ids)
+    params = {
+        'ids': tracks
+    }
+    data = requests.get(url, params=params, headers=header)
+    feature_data = pandas.DataFrame(json.loads(data.text)['audio_features'])
+    return feature_data
 
 
 def main():
     client_id = os.getenv('SPOTIFY_CLIENT_ID')
     client_secret = os.getenv('SPOTIFY_CLIENT_SECRET')
     redirect_uri = 'http://localhost/'
-    code = get_code(client_id=client_id, redirect_uri=redirect_uri, scopes='playlist-read-private')
+    scopes = 'playlist-read-private'
+    code = get_code(client_id=client_id, redirect_uri=redirect_uri, scopes=scopes)
     token = get_token(code=code, client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri)
 
     global header
@@ -96,16 +115,11 @@ def main():
     playlists = get_playlists()
 
     for playlist in playlists:
-        name = playlist['name']
-        collaborative = playlist['collaborative']
-        uri = playlist['uri']
-        track_href = playlist['tracks']['href']
-        id = playlist['id']
+        playlist_id = playlist['id']
         user_id = playlist['owner']['id']
-        get_playlist_tracks(user_id=user_id, playlist_id=id)
-
-
-    print playlists
+        tracks = get_playlist_tracks(user_id=user_id, playlist_id=playlist_id)
+        track_features = get_track_info(tracks['id'])
+        print track_features
 
 
 main()
