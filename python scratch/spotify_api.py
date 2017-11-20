@@ -81,13 +81,16 @@ def get_playlist_tracks(user_id, playlist_id):
     data = requests.get(url=url, headers=header, params=params)
     track_data = json.loads(data.text)
     df = pandas.DataFrame(track_data['items'])
-    track_info = pandas.DataFrame(df['track'].tolist())
 
-    tracks = track_info[['id', 'name']]
-    artists = track_info[['artists']].apply(lambda x: x[0], 1)['artists'].apply(pandas.Series)
-    #artists = pandas.DataFrame(track_info['artists'].tolist())[['name']]
-    tracks['artist'] = artists['name']
-    return tracks
+    if df.empty:
+        return df
+    else:
+        track_info = pandas.DataFrame(df['track'].tolist())
+
+        tracks = track_info[['id', 'name']]
+        artists = track_info[['artists']].apply(lambda x: x[0][0]['name'], 1)
+        tracks.loc[:, 'artist'] = artists
+        return tracks
 
 
 def get_track_info(track_ids):
@@ -114,12 +117,37 @@ def main():
 
     playlists = get_playlists()
 
+    playlist_track_data = pandas.DataFrame(columns=['acousticness', 'analysis_url', 'danceability', 'duration_ms',
+                                                    'energy', 'track_id', 'instrumentalness', 'key', 'liveness',
+                                                    'loudness', 'mode', 'speechiness', 'tempo', 'time_signature',
+                                                    'track_href', 'type', 'uri', 'valence', 'playlist_name',
+                                                    'playlist_id', 'user_id'])
+
     for playlist in playlists:
         playlist_id = playlist['id']
+        playlist_name = playlist['name']
         user_id = playlist['owner']['id']
+
+        print playlist_id, user_id
+
         tracks = get_playlist_tracks(user_id=user_id, playlist_id=playlist_id)
+        if tracks.empty:
+            continue
+
+        tracks = tracks[tracks['id'].notnull()]
+        if tracks.empty:
+            continue
+
         track_features = get_track_info(tracks['id'])
-        print track_features
+
+        track_features.loc[:, 'playlist_name'] = playlist_name
+        track_features.loc[:, 'playlist_id'] = playlist_id
+        track_features.loc[:, 'user_id'] = user_id
+        track_features = track_features.rename(columns={'id': 'track_id'})
+
+        playlist_track_data = playlist_track_data.append(track_features)
+
+    playlist_track_data.to_csv('/Users/jasonjea/playlist-project/playlist_track_data.txt', sep='\t')
 
 
 main()
