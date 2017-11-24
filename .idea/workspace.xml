@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dc1b446-dbae-4cdc-9074-7f71b7f6fbff" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/python scratch/spotify_api.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/python scratch/spotify_api_exploration.ipynb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/playlist_track_data.txt" afterPath="$PROJECT_DIR$/playlist_track_data.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/playlist_track_data.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scratch/spotify_api.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scratch/spotify_api_exploration.ipynb" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,22 +16,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="spotify_api.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scratch/spotify_api.py">
+        <entry file="file://$PROJECT_DIR$/exploration/spotify_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="245" column="108" lean-forward="false" selection-start-line="245" selection-start-column="108" selection-end-line="245" selection-end-column="108" />
+            <state relative-caret-position="233">
+              <caret line="253" column="82" lean-forward="false" selection-start-line="253" selection-start-column="82" selection-end-line="253" selection-end-column="82" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spotify_api_exploration.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scratch/spotify_api_exploration.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
             </state>
           </provider>
         </entry>
@@ -55,6 +46,7 @@
         <option value="$PROJECT_DIR$/python scratch/spotify_api_exploration.ipynb" />
         <option value="$PROJECT_DIR$/python scratch/spotify_api.py" />
         <option value="$PROJECT_DIR$/scratch/spotify_api.py" />
+        <option value="$PROJECT_DIR$/exploration/spotify_api.py" />
       </list>
     </option>
   </component>
@@ -90,7 +82,7 @@
             <path>
               <item name="playlist-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="playlist-project" type="462c0819:PsiDirectoryNode" />
-              <item name="scratch" type="462c0819:PsiDirectoryNode" />
+              <item name="exploration" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -338,8 +330,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scratch/spotify_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="245" column="108" lean-forward="false" selection-start-line="245" selection-start-column="108" selection-end-line="245" selection-end-column="108" />
+        <state relative-caret-position="293">
+          <caret line="257" column="0" lean-forward="true" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exploration/spotify_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="253" column="82" lean-forward="false" selection-start-line="253" selection-start-column="82" selection-end-line="253" selection-end-column="82" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
