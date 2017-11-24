@@ -252,7 +252,8 @@ def main():
 
     # write final playlist track dataframe to a txt fle
     playlist_track_data.to_csv(os.path.expanduser('~/playlist-project/exploration/playlist_track_data.txt'),
-                               sep='\t',
+                               index=False,
+                               sep='|',
                                encoding='utf-8')
 
 
