@@ -206,7 +206,7 @@ def main():
                                                     'energy', 'track_id', 'instrumentalness', 'key', 'liveness',
                                                     'loudness', 'mode', 'speechiness', 'tempo', 'time_signature',
                                                     'track_href', 'type', 'uri', 'valence', 'playlist_name',
-                                                    'playlist_id', 'user_id'])
+                                                    'playlist_id', 'user_id', 'name', 'artist'])
 
     # loop through playlists to build track data
     for playlist in playlists:
@@ -242,6 +242,9 @@ def main():
         track_features.loc[:, 'playlist_name'] = playlist_name
         track_features.loc[:, 'playlist_id'] = playlist_id
         track_features.loc[:, 'user_id'] = user_id
+
+        track_features = track_features.merge(tracks, on='id', how='inner')  # join in artist and track name
+
         track_features = track_features.rename(columns={'id': 'track_id'})
 
         # append current iteration playlist track feature data to the playlist_track_data dataframe
