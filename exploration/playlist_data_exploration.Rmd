@@ -1,0 +1,66 @@
+---
+title: "Initial Playlist Track Exploration"
+output:
+  html_document:
+    df_print: paged
+---
+
+We are using a python script stored in `exploration/spotify_api.py` that cleans and restructures data from the Spotify API into a tidy data format where _every row_ is a single track from a single playlist, and _every column_ is a feature of that particular track (including attributes like **track name**, **artist name**, **bpm**, and **decibels**).  
+
+The script makes use of three API endpoints:
+
+1) the playlists endpoint, which gets all playlists from the authenticated user
+2) the playlist tracks endpoint, which gets all tracks from a playlist id
+3) the audio features endpoint, which gets all audio features for a track id
+
+We write the resulting dataframe to a text file `playlist_track_data.txt`.  Let's first read in the text file and take a peek at what the dataframe looks like.  We'll need these libraries for this project:
+```{r, warning = FALSE, message = FALSE}
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(stringr)
+library(purrr)
+library(emojifont)
+```
+
+The **readr** package from the **tidyverse** has a much better parser than the base `read.table`- it's quicker, picks up column types more consistently, and also handles things like text encoding very cleanly.
+```{r}
+playlist_data <- read_delim(file = 'playlist_track_data.txt', delim = '|', col_names = TRUE)
+```
+
+<br> 
+
+We've got quite a few columns here and it's pretty intuitive what the data relationships are: we have many playlists (specified by `playlist_id` and `playlist_name`), and each playlist can have any number of tracks (specified by `name` and `track_id`).  A track can belong to any number of playlists.  One track can only belong to one artist (specified by `artist`), but an artist can have many tracks in the dataframe (and belong to many playlists).  There are some Spotify specific columns such as `track_href` and `uri`, but otherwise, everything else can be considered a track feature.  We need to reference [Spotify's documentation](https://developer.spotify.com/web-api/get-several-audio-features/) in order to understand what things like valence, loudness, and danceability mean (though we can make pretty good educated guesses).
+```{r}
+playlist_data %>% head
+```
+
+<br>
+
+I always like to start off with some simple summary statistics just to get a firm grasp on the dataset we're working with (reminder that the data pulled here is respective to the authenticated user.  Someone else using the python script could get back very different results).  
+
+Let's see how many playlists we have, and in general, how many tracks we have per playlist.
+```{r, fig.width = 8, fig.height = 8}
+playlist_data %>%
+  
+  # count unique track_ids for every playlist_name
+  group_by(playlist_name) %>%
+  summarise(tracks =  length(unique(track_id))) %>% ungroup %>%  
+  
+  # when ggplot graphs a factor variable, it orders the variable by the order of the factor levels
+  # if we want the plot to show playlists from least # of tracks to most, we can reorder the factor levels like:
+  mutate(playlist_name = factor(playlist_name, levels = playlist_name[order(tracks)])) %>%
+  
+  # create a bar graph where the x-axis is the playlist_name and the y-axis the # of tracks
+  ggplot(aes(x = playlist_name, y = tracks)) + geom_bar(stat = "identity") +
+  scale_y_continuous(breaks = seq(0, 500, 50)) +
+  
+  # I like to flip the coordinates to make it more readable
+  coord_flip() +
+  
+  # cleaner theme
+  theme_bw()
+```
+
+I have a lot of playlists that are just single albums, so you have a bunch of playlists that are < 30 tracks.  Then, at the upper end of the graph, you can see what are mostly collaborative playlists, that reach into the 100+ tracks.  
